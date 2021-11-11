@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(225, 100%, 94%) url('./images/pattern-background-desktop.svg') top/contain no-repeat;
+  font-family: 'Red Hat Display';
+}
+
+.card {
+  margin: 4em auto;
+  max-width: 450px;
+  min-height: 650px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0em 0.01em 1em hsl(224, 23%, 55%);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 0.75em;
+}
+
+.card-header img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  max-width: 450px;
+}
+
+.card-header h1 {
+  font-weight: 900;
+  padding: 0.75em 1em 0.25em 1em;
+}
+
+.card-header p {
+  color: #888;
+  padding: 0.5em 3em;
+}
+
+.plan-row {
+  background: hsl(225, 100%, 98%);
+  border-radius: 10px;
+  padding: 0.5em;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.column {
+  padding: 0.5em 0.75em;
+  float: left;
+}
+
+.middle {
+  line-height: 1.5em;
+}
+
+.middle p {
+  color: #888;
+}
+
+.right {
+  float: right;
+  text-align: center;
+  line-height: 3em;
+}
+
+.right a {
+  color: hsl(245, 75%, 52%);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.right a:hover {
+  color: hsl(224, 23%, 55%);
+  text-decoration: none;
+}
+
+.plan-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+button {
+  font-family: 'Red Hat Display';
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  margin: 1.5em auto;
+  padding: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+#proceed-btn {
+  background-color: hsl(245, 75%, 52%);
+  color: #fff;
+  width: 80%;
+  box-shadow: 0em 0.3em 1em hsl(224, 23%, 55%);
+}
+
+#cancel-btn {
+  background-color: #fff;
+  color: hsl(224, 23%, 55%);
+  width: auto;
+}
+
+#proceed-btn:hover {
+  background: hsl(224, 23%, 55%);
+}
+
+#cancel-btn:hover {
+  color: hsl(223, 47%, 23%);
+}
+
+/* Given Styles for attribution text */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 500px) {
+  body {
+    background: hsl(225, 100%, 94%) url('./images/pattern-background-mobile.svg') top/contain no-repeat;
+  }
+
+  .card {
+    max-width: 325px;
+    min-height: 500px;
+    margin: 4em auto 2em auto
+  }
+
+  .card-header img {
+    max-width: 325px;
+  }
+
+  .card-header h1 {
+    font-size: 1.75em;
+  }
+
+  .card-header p {
+    padding: 0.5em 2em;
+  }
+
+  .plan-row {
+    min-width: 90%;
+  }
+
+  button {
+    margin: 1.25em auto;
+  }
+
+  #cancel-btn {
+    padding-top: 0;
+    padding-bottom: 1.25em;
+  }
+}
