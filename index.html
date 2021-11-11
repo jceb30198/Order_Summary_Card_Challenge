@@ -13,8 +13,8 @@
 <body>
   <main class="card">
     
-    <img src="./images/illustration-hero.svg" alt="Person listening to music">
     <header class="card-header">
+      <img src="./images/illustration-hero.svg" alt="Person listening to music">
       <h1>Order Summary</h1>
       <p>
         You can now listen to millions of songs, audiobooks, and podcasts on any
@@ -22,12 +22,20 @@
       </p>
     </header>
 
-    <section class="plan-selection">
-      <h4>Annual Plan</h4>
-      <p>$59.99/year</p>
-      <a href="#">Change</a>
+    <section class="plan-row">
+      <div class="column">
+        <img src="./images/icon-music.svg" alt="Music Icon">
+      </div>
+      <div class="column middle">
+        <h4>Annual Plan</h4>
+        <p>$59.99/year</p>
+      </div>
+      <div class="column right">
+        <a href="#">Change</a>
+      </div>
     </section>
 
+   
     <button>Proceed to Payment</button>
     <button>Cancel Order</button>
   </main>
