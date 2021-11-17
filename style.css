@@ -12,7 +12,7 @@ body {
 }
 
 .card {
-  margin: 4em auto;
+  margin: 20vh auto 1em auto;
   max-width: 450px;
   min-height: 650px;
   background: #fff;
@@ -135,7 +135,7 @@ button {
 
 @media (max-width: 500px) {
   body {
-    background: hsl(225, 100%, 94%) url('./images/pattern-background-mobile.svg') top/contain no-repeat;
+    background: hsl(225, 100%, 98%) url('./images/pattern-background-mobile.svg') top/contain no-repeat;
   }
 
   .card {

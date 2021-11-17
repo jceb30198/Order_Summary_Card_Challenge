@@ -1,91 +1,118 @@
-# Frontend Mentor - Order summary card
+# Frontend Mentor - Order summary card solution
 
-![Design preview for the Order summary card coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Order summary card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this order summary card component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - See hover states for interactive elements
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+- This is the design on a desktop screen width of 1440px
+![Desktop Design Screenshot](./images/desktop-1440px.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+- This is the design on a mobile phone width of 375px
+![Mobile Design Screenshot](./images/mobile-375px.png)
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Links
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-order-summary-card-with-html-and-css-4UK9QNbkC)
+- Live Site URL: [Deployed GitHub URL](https://jceb30198.github.io/Order_Summary_Card_Challenge/)
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+## My process
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Built with
 
-## Building your project
+- Semantic HTML5
+- CSS
+- CSS Media Queries
+- Mobile-responsive Workflow
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### What I learned
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+In this challenge I learned how to work with media queries and make a layout more responsive. The challenge called for two different widths: one for desktops at 1440px and the other for mobile devices at 375px. The image on the card-header class was not responsive past 450px originally, so I decided to add a media query for a max-width of 500 px. A portion of the media query can been seen below:
 
-## Deploying your project
+```css
+@media (max-width: 500px) {
+  body {
+    background: hsl(225, 100%, 94%) url('./images/pattern-background-mobile.svg') top/contain no-repeat;
+  }
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+  .card {
+    max-width: 325px;
+    min-height: 500px;
+    margin: 4em auto 2em auto
+  }
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+  .card-header img {
+    max-width: 326px;
+  }
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+  .card-header h1 {
+    font-size: 1.75em;
+  }
 
-## Create a custom `README.md`
+  .card-header p {
+    padding: 0.5em 2em;
+  }
+}
+```
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+Another thing I learned in this challenge was to make the responsiveness feel better with pseudo classes and media queries. When using the hover pseudo class on mobile the effect will remain until the user touches another part of their screen, so I decided to combat that by using a media query to change the pseudo class to active on mobile devices. Below is an example of how I used media queries alongside pseudo classes:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```css
+@media (min-width: 501px) {
+  .right a:hover {
+    color: hsl(224, 23%, 55%);
+    text-decoration: none;
+  }
+  
+  #proceed-btn:hover {
+    background: hsl(224, 23%, 55%);
+  }
+  
+  #cancel-btn:hover {
+    color: hsl(223, 47%, 23%);
+  }
+}
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+@media (max-width: 500px) {
+  .right a:active {
+    color: hsl(224, 23%, 55%);
+    text-decoration: none;
+  }  
 
-## Submitting your solution
+  #proceed-btn:active {
+    background: hsl(224, 23%, 55%);
+  }
+  
+  #cancel-btn:active {
+    color: hsl(223, 47%, 23%);
+  }
+}
+```
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+### Useful resources
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+- [MDN Web Docs: CSS Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) - Here I read up on media queries and they provide plenty of great examples. I highly recommend this for anyone having trouble learning media queries.
 
-## Sharing your solution
+## Author
 
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- Website - [Jack Ceballos](https://jceb30198.github.io/#/)
+- Frontend Mentor - [@jceb30198](https://www.frontendmentor.io/profile/jceb30198)
